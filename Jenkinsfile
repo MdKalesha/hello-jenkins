@@ -2,9 +2,15 @@ pipeline {
     agent any
 
     stages {
-        stage('Run Hello World') {
+        stage('Compile') {
             steps {
-                bat 'python app.py'
+                bat 'javac Hello.java'
+            }
+        }
+
+        stage('Run') {
+            steps {
+                bat 'java Hello'
             }
         }
     }
